@@ -294,8 +294,6 @@ $paleta:(
 }
 
 
-
-
 #navIndex{
     background-color: map-get($paleta, $key:'seis');
 }
@@ -304,58 +302,14 @@ $paleta:(
     background-color: map-get($paleta, $key:'seis');
 }
 
+#bg-mapNav{
+    background-color: map-get($paleta, $key:'seis');
+}
+
 #botonera{
     background-color: map-get($paleta, $key:'seis');
 }
-// se expresa con comillas simples
 
-    //fraccionas para optimizar 
-
-
-// math
-.box{
-	width: ($width - 2%) / 4;
-	height: $height - 2vh;
-	background-color: white;
-}
-
-// condicionales: son para tomar decisiones
-.icon-lang{
-	width: 50px;
-	height: 50px;
-	background-size:contain;
-	background-position:center;
-	@if $lang==es{background-image: url(../img/icono-es.jpg)}
-	@else if $lang==en{background: url(../img/icono-en.jpg)}
-	@else if $lang==fr{background: url(../img/icono-fr.jpg)}
-	@else{background: url(../img/icono-any.jpg)};
-}
-
-// bucles
-@for $i from 1 through 6{
-	.text-#{$i}{
-		font-size: .25em *$i;
-	}
-}
-// cuantas veces quiero que algo se repita
-// through incluye al 6, si le pongo to no incluye al último 
-// "eslabón" del loop
-
-// bucle evolucionado
-// estoy llamando al footer
-// no es solo una iteración, lo va a recorrer y asignar un valor
-// de ahí viene el chiste de evolucionado
-@each $icono in facebook, twitter, instagram{
-	.#{$icono}-icon{
-		background-image:url(../img/#{$icono}.svg);
-		width: 30px;
-		height: 30px;
-		background-size:100%;
-		list-style: none;
-	}
-}
-// instalar bootstrap por css: npm install bootstrap
-// paso siguiente: en main importas bootstrap
 
 @media (min-width: 280px) {
     #headerA{
