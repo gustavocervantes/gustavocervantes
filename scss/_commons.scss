@@ -1,0 +1,588 @@
+// variables 
+$width:100%;
+$height:30vh;
+
+$lang:en;
+
+html {
+    font-size: 100%;
+}
+
+header{
+    background-color: #0B3954;
+    display: flex;
+    text-align: center;
+    color: #D2E1FC;
+    font-family: 'Roboto', sans-serif;
+    
+    font-weight: 400;
+
+    h1{
+        font-weight: 600;
+        font-size: 2.5rem;
+        font-style: $fontMain;
+    }
+
+    img{
+        width: 2.4em;
+        height: 2.4em;
+    }
+    
+}
+
+header img{
+    width: 7em;
+    height: 7em;
+    margin-left: 0.5em;
+    margin-top: 00.5em;
+    margin-bottom: 00.5em;
+}
+
+header h1 {
+    text-align: center;
+    margin-left: 10em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+main{
+    display: flex;
+    padding: 0.1em;
+    section{
+        .videoMain{
+            background-color: #0B3954;
+        }
+        
+    }
+    
+}
+
+aside{
+    display: flex;
+    padding: 0.1em;
+}
+
+
+
+main{
+    display: flex;
+    flex-direction: row;
+}
+
+.footerIndex{
+    margin-top: 0em;
+    height: 4em;
+    width: 100%;
+}
+
+.footerIndex p{
+    text-align: center;
+    font-weight: 600;
+    width: 100%;
+    height: 4em;
+}
+
+nav{
+    div{
+        div{
+            ul{
+                li:hover{
+                    cursor: pointer;
+                    background-color: #0B3954;
+                    border-radius: 0.5em;
+                }
+            }
+        }
+    }
+}
+
+.footerIndex{
+    background-color: #0B3954;
+    color: white;
+    text-align: center;
+    display: flex;
+    height: 7em;
+    p{
+        margin-top: 1.5em;
+        align-content: space-between;
+        
+    }
+}
+
+.flexVideoAside{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between;
+    justify-items:flex-start;
+    overflow:visible;
+    // box-sizing:inherit;
+    align-items:flex-start;
+    width: 100%;
+    height: auto;
+    background-color: #038F7C;
+    text-align: center;
+}
+
+.videoMain{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    align-content: space-between;
+    width: 35vw;
+    div{
+        align-items: center;
+        padding: 2em;
+        text-justify: auto;
+        text-overflow: inherit;
+        
+    }
+   
+}
+
+.asideRight{
+    display: flex;
+    flex-direction: row;
+    width: 55vw;   
+    
+    
+
+}
+
+#npsIndex{
+    background-color:#3C5B91;
+    color: aliceblue;
+}
+
+.asideRight div{
+    display: flex;
+    padding: 4em;
+    margin: 4em;
+    background-color:#0B3954;
+    width: 12em;
+    // justify-items:flex-start;
+    align-items: center;
+    justify-content:center;
+    border-radius: 2em;
+    width: 4em;
+    height: 6em;
+    text-align:justify;
+    text-justify: word-spacing;
+    color: #D2E1FC;
+   
+    
+}
+
+.imgnormalizada img {
+    width: auto;
+    height: 225px;
+    max-height: 225px;
+  }
+
+.backgroundColor{
+    background-color: yellow;
+}
+
+.navBlue{
+    background-color: blue;
+}
+
+// #alineaciondeTexto{
+//     text-align: center;
+//     text-overflow: inherit;
+//     width: 8em;
+//     height: 4em;
+// }
+
+div.rotateAlpha:hover{
+    transform: rotate(360deg);
+    background-color:#0B3954 ;
+    transition: transform 4s;
+    cursor: pointer;
+    width: 8em;
+    height: 4em;
+    margin-left: 4rem;
+    margin-right: 4rem;
+    border-radius: 1em;
+        
+}
+
+
+
+.textColorh1{
+    color: whitesmoke;
+}
+
+
+.btn-color{
+	width: 1em;
+    height: 2.5em;
+    border: none;
+    background:#0B3954 ;
+    color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    // nesting
+    &:hover{
+        color: #038F7C;
+        cursor: pointer;
+    }
+}
+
+#btn-rounded{
+    @extend .btn-color;
+    // me traigo todo de la clase btn-more
+    // es una especie de herencia de clase
+    border-radius: 5px;
+    
+}
+
+//mixins
+// es como una función
+// hay que pensarlo como una acción que se va a repetir
+// todos los header con la misma paleta de colores
+@mixin headerH ($w-100, $bg-color,$font-size) {
+    width: $w-100;
+    background-color: $bg-color;
+    font-size: $font-size;
+    padding: 2px;
+}
+
+// estoy definiendo el mixing, es como un bucle
+
+// voy a llamar al mixing en estas clase
+
+#headerA{
+    @include headerH(100%, #0B3954, 1.4em)
+}
+
+h3{
+    @include headerH(2em, 2em, darkviolet  )
+}
+
+// extend: calcar una clase exactamente igual
+// con el mixing le definis los parámetros a la clase
+
+@mixin flex($justify,$align) {
+    display: flex;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+// esto se podría poner en content y dejar solo a los mixin´s
+.box{
+    @include flex(center, center )
+}
+// le pido align-items y justify content center los dos con el mixin
+
+// map OK
+$paleta:(
+    'uno': #0B3954,
+    'dos': #279EB0,
+    'tres':#038F7C,
+    'cuatro':#296AD9,
+    'cinco': #D2E1FC,
+    'seis': #3C5B91,
+    
+);
+
+
+
+.asideRight{
+    background-color: map-get($paleta, $key:'tres');
+}
+
+
+
+
+#navIndex{
+    background-color: map-get($paleta, $key:'seis');
+}
+
+#navNosotros{
+    background-color: map-get($paleta, $key:'seis');
+}
+
+#botonera{
+    background-color: map-get($paleta, $key:'seis');
+}
+// se expresa con comillas simples
+
+    //fraccionas para optimizar 
+
+
+// math
+.box{
+	width: ($width - 2%) / 4;
+	height: $height - 2vh;
+	background-color: white;
+}
+
+// condicionales: son para tomar decisiones
+.icon-lang{
+	width: 50px;
+	height: 50px;
+	background-size:contain;
+	background-position:center;
+	@if $lang==es{background-image: url(../img/icono-es.jpg)}
+	@else if $lang==en{background: url(../img/icono-en.jpg)}
+	@else if $lang==fr{background: url(../img/icono-fr.jpg)}
+	@else{background: url(../img/icono-any.jpg)};
+}
+
+// bucles
+@for $i from 1 through 6{
+	.text-#{$i}{
+		font-size: .25em *$i;
+	}
+}
+// cuantas veces quiero que algo se repita
+// through incluye al 6, si le pongo to no incluye al último 
+// "eslabón" del loop
+
+// bucle evolucionado
+// estoy llamando al footer
+// no es solo una iteración, lo va a recorrer y asignar un valor
+// de ahí viene el chiste de evolucionado
+@each $icono in facebook, twitter, instagram{
+	.#{$icono}-icon{
+		background-image:url(../img/#{$icono}.svg);
+		width: 30px;
+		height: 30px;
+		background-size:100%;
+		list-style: none;
+	}
+}
+// instalar bootstrap por css: npm install bootstrap
+// paso siguiente: en main importas bootstrap
+
+@media (min-width: 280px) {
+    #headerA{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 25vw 65vwpx 10vw;
+        grid-template-areas: "header header header" "content1 content2 content3" "header1 header1 header1";
+    }
+    #imgHeaderA{
+        grid-area: content1;
+    }
+    #h1Index{
+        grid-area: content1;
+    }
+
+    .gridIndex{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 15vw 10vw 30vw 10vw 15vw 10vw 10vw;
+        grid-template-areas: "header header"
+                            "nav nav" 
+                            "main main"
+                            "aside aside"
+                            "nps nps"
+                            "carrusel carrusel"
+                            "footer footer";
+
+    }
+    #headerA{
+        grid-area: header;
+    }
+
+    #navIndex{
+        grid-area: nav;
+    }
+
+    #mainIndex{
+        grid-area: main;
+    }
+
+    #asideIndex{
+        grid-area: aside;
+    }
+
+    #npsIndex{
+        grid-area: nps;
+    }
+
+    #carouselIndex{
+        grid-area: carrusel;
+    }
+
+    #footerIndex{
+        grid-area: footer;
+    }
+
+}
+
+@media (min-width: 768px) {
+    
+    #headerA{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 25vw 65vwpx 10vw;
+        grid-template-areas: "header header header" "content1 content2 content3" "header1 header1 header1";
+    
+        #imgHeaderA{
+            grid-area: content1;
+        }
+        #h1Index{
+            grid-area: content2;
+        }
+    }
+
+    .gridIndex{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 15vw 10vw 30vw 10vw 15vw 10vw 10vw;
+        grid-template-areas: "header header"
+                            "nav nav" 
+                            "main main"
+                            "aside aside"
+                            "nps nps"
+                            "carrusel carrusel"
+                            "footer footer";
+
+    }
+
+    #headerA{
+        grid-area: header;
+    }
+
+    #navIndex{
+        grid-area: nav;
+    }
+
+    #mainIndex{
+        grid-area: main;
+    }
+
+    #asideIndex{
+        grid-area: aside;
+    }
+
+    #npsIndex{
+        grid-area: nps;
+    }
+
+    #carouselIndex{
+        grid-area: carrusel;
+    }
+
+    #footerIndex{
+        grid-area: footer;
+    }
+
+}
+
+
+@media (min-width: 1024px) {
+    #headerA{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 25vw 65vwpx 10vw;
+        grid-template-areas: "header header header" "content1 content2 content3" "header1 header1 header1";
+    
+        #imgHeaderA{
+            grid-area: content1;
+        }
+        #h1Index{
+            grid-area: content2;
+        }
+    }
+
+    .gridIndex{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 15vw 10vw 30vw 10vw 15vw 10vw 10vw;
+        grid-template-areas: "header header"
+                            "nav nav" 
+                            "main main"
+                            "aside aside"
+                            "nps nps"
+                            "carrusel carrusel"
+                            "footer footer";
+
+    }
+
+    #headerA{
+        grid-area: header;
+    }
+
+    #navIndex{
+        grid-area: nav;
+    }
+
+    #mainIndex{
+        grid-area: main;
+    }
+
+    #asideIndex{
+        grid-area: aside;
+    }
+
+    #npsIndex{
+        grid-area: nps;
+    }
+
+    #carouselIndex{
+        grid-area: carrusel;
+    }
+
+    #footerIndex{
+        grid-area: footer;
+    }
+
+
+}
+
+
+
+@media (min-width: 1200px) {
+
+    .gridIndex{
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: 15vw 10vw 40vw 15vw 10vw 10vw;
+        grid-template-areas: "header header"
+                            "nav nav" 
+                            "main aside"
+                            "nps nps"
+                            "carrusel carrusel"
+                            "footer footer";
+
+    }
+    #headerA{
+        grid-area: header;
+    }
+
+    #navIndex{
+        grid-area: nav;
+    }
+
+    #mainIndex{
+        grid-area: main;
+    }
+
+    #asideIndex{
+        grid-area: aside;
+    }
+
+    #npsIndex{
+        grid-area: nps;
+    }
+
+    #carouselIndex{
+        grid-area: carrusel;
+    }
+
+    #footerIndex{
+        grid-area: footer;
+    }
+
+    #headerA{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 25vw 65vwpx 10vw;
+        grid-template-areas: "header header header" "content1 content2 content3" "header1 header1 header1";
+    
+        
+    }
+    #imgHeaderA{
+        grid-area: content1;
+    }
+    #h1Index{
+        grid-area: content2;
+    }
+}
