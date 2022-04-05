@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto:wght@100&family=Tangerine&display=swap");
 html {
   font-size: 100%;
@@ -51,11 +52,13 @@ main section .videoMain {
   background-color: #0B3954;
 }
 
-aside {
+.asideIndex {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding: 0.1em;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
 main {
@@ -297,23 +300,6 @@ h3 {
 }
 
 @media (min-width: 280px) {
-  #headerA {
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
-    -ms-grid-rows: 25vw 65vwpx 10vw;
-        grid-template-rows: 25vw 65vwpx 10vw;
-        grid-template-areas: "header header header" "content1 content2 content3" "header1 header1 header1";
-  }
-  #imgHeaderA {
-    -ms-grid-row: 2;
-    -ms-grid-column: 1;
-    grid-area: content1;
-  }
-  #h1Index {
-    -ms-grid-row: 2;
-    -ms-grid-column: 1;
-    grid-area: content1;
-  }
   .gridIndex {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
@@ -366,23 +352,6 @@ h3 {
 }
 
 @media (min-width: 768px) {
-  #headerA {
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
-    -ms-grid-rows: 25vw 65vwpx 10vw;
-        grid-template-rows: 25vw 65vwpx 10vw;
-        grid-template-areas: "header header header" "content1 content2 content3" "header1 header1 header1";
-  }
-  #headerA #imgHeaderA {
-    -ms-grid-row: 2;
-    -ms-grid-column: 1;
-    grid-area: content1;
-  }
-  #headerA #h1Index {
-    -ms-grid-row: 2;
-    -ms-grid-column: 2;
-    grid-area: content2;
-  }
   .gridIndex {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
@@ -434,24 +403,18 @@ h3 {
   }
 }
 
+.grid {
+  width: 99%;
+  display: -ms-grid;
+  display: grid;
+  /* inline flex o inline grid (por fuera se
+	comporta como elemento de línea, que floten
+	en la misma línea, pero hacia adentro con sus hijos 
+	se comporta como grid. con flex es lo mismo */
+  /* el contenedor o padre tiene el display grid */
+}
+
 @media (min-width: 1024px) {
-  #headerA {
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
-    -ms-grid-rows: 25vw 65vwpx 10vw;
-        grid-template-rows: 25vw 65vwpx 10vw;
-        grid-template-areas: "header header header" "content1 content2 content3" "header1 header1 header1";
-  }
-  #headerA #imgHeaderA {
-    -ms-grid-row: 2;
-    -ms-grid-column: 1;
-    grid-area: content1;
-  }
-  #headerA #h1Index {
-    -ms-grid-row: 2;
-    -ms-grid-column: 2;
-    grid-area: content2;
-  }
   .gridIndex {
     -ms-grid-columns: (1fr)[2];
         grid-template-columns: repeat(2, 1fr);
@@ -514,7 +477,7 @@ h3 {
   #headerA {
     -ms-grid-row: 1;
     -ms-grid-column: 1;
-    -ms-grid-column-span: 3;
+    -ms-grid-column-span: 2;
     grid-area: header;
   }
   #navIndex {
@@ -550,23 +513,6 @@ h3 {
     -ms-grid-column: 1;
     -ms-grid-column-span: 2;
     grid-area: footer;
-  }
-  #headerA {
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
-    -ms-grid-rows: 25vw 65vwpx 10vw;
-        grid-template-rows: 25vw 65vwpx 10vw;
-        grid-template-areas: "header header header" "content1 content2 content3" "header1 header1 header1";
-  }
-  #imgHeaderA {
-    -ms-grid-row: 2;
-    -ms-grid-column: 1;
-    grid-area: content1;
-  }
-  #h1Index {
-    -ms-grid-row: 2;
-    -ms-grid-column: 2;
-    grid-area: content2;
   }
 }
 

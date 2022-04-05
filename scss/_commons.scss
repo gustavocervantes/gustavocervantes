@@ -57,11 +57,15 @@ main{
     
 }
 
-aside{
-    display: flex;
-    padding: 0.1em;
-}
+// #asideIndex{
+//     display: flex;
+//     padding: 0.1em;
+// }
 
+.asideIndex{
+    display: flex;
+    justify-content: space-between;
+}
 
 
 main{
@@ -312,19 +316,21 @@ $paleta:(
 
 
 @media (min-width: 280px) {
-    #headerA{
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 25vw 65vwpx 10vw;
-        grid-template-areas: "header header header" "content1 content2 content3" "header1 header1 header1";
-    }
-    #imgHeaderA{
-        grid-area: content1;
-    }
-    #h1Index{
-        grid-area: content1;
-    }
+    
+    // #headerA{
+    //     grid-template-columns: repeat(3, 1fr);
+    //     grid-template-rows: 25vw 65vwpx 10vw;
+    //     grid-template-areas: "header header header" "content1 content2 content3" "header1 header1 header1";
+    // }
+    // #imgHeaderA{
+    //     grid-area: content1;
+    // }
+    // #h1Index{
+    //     grid-area: content1;
+    // }
 
     .gridIndex{
+        
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: 15vw 10vw 30vw 10vw 15vw 10vw 10vw;
         grid-template-areas: "header header"
@@ -368,20 +374,22 @@ $paleta:(
 
 @media (min-width: 768px) {
     
-    #headerA{
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 25vw 65vwpx 10vw;
-        grid-template-areas: "header header header" "content1 content2 content3" "header1 header1 header1";
+    // #headerA{
+        
+    //     grid-template-columns: repeat(3, 1fr);
+    //     grid-template-rows: 25vw 65vwpx 10vw;
+    //     grid-template-areas: "header header header" "content1 content2 content3" "header1 header1 header1";
     
-        #imgHeaderA{
-            grid-area: content1;
-        }
-        #h1Index{
-            grid-area: content2;
-        }
-    }
+    //     #imgHeaderA{
+    //         grid-area: content1;
+    //     }
+    //     #h1Index{
+    //         grid-area: content2;
+    //     }
+    // }
 
     .gridIndex{
+        
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: 15vw 10vw 30vw 10vw 15vw 10vw 10vw;
         grid-template-areas: "header header"
@@ -424,22 +432,33 @@ $paleta:(
 
 }
 
+.grid {
+    width: 99%;
+    display: grid;
+    /* inline flex o inline grid (por fuera se
+	comporta como elemento de línea, que floten
+	en la misma línea, pero hacia adentro con sus hijos 
+	se comporta como grid. con flex es lo mismo */
+    /* el contenedor o padre tiene el display grid */
+}
 
 @media (min-width: 1024px) {
-    #headerA{
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 25vw 65vwpx 10vw;
-        grid-template-areas: "header header header" "content1 content2 content3" "header1 header1 header1";
+    // #headerA{
+        
+    //     grid-template-columns: repeat(3, 1fr);
+    //     grid-template-rows: 25vw 65vwpx 10vw;
+    //     grid-template-areas: "header header header" "content1 content2 content3" "header1 header1 header1";
     
-        #imgHeaderA{
-            grid-area: content1;
-        }
-        #h1Index{
-            grid-area: content2;
-        }
-    }
+    //     #imgHeaderA{
+    //         grid-area: content1;
+    //     }
+    //     #h1Index{
+    //         grid-area: content2;
+    //     }
+    // }
 
     .gridIndex{
+        
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: 15vw 10vw 30vw 10vw 15vw 10vw 10vw;
         grid-template-areas: "header header"
@@ -486,8 +505,9 @@ $paleta:(
 
 
 @media (min-width: 1200px) {
-
+    
     .gridIndex{
+        
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: 15vw 10vw 40vw 15vw 10vw 10vw;
         grid-template-areas: "header header"
@@ -526,17 +546,17 @@ $paleta:(
         grid-area: footer;
     }
 
-    #headerA{
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: 25vw 65vwpx 10vw;
-        grid-template-areas: "header header header" "content1 content2 content3" "header1 header1 header1";
+    // #headerA{
+    //     grid-template-columns: repeat(3, 1fr);
+    //     grid-template-rows: 25vw 65vwpx 10vw;
+    //     grid-template-areas: "header header header" "content1 content2 content3" "header1 header1 header1";
     
         
-    }
-    #imgHeaderA{
-        grid-area: content1;
-    }
-    #h1Index{
-        grid-area: content2;
-    }
+    // }
+    // #imgHeaderA{
+    //     grid-area: content1;
+    // }
+    // #h1Index{
+    //     grid-area: content2;
+    // }
 }
