@@ -336,6 +336,10 @@ $paleta:(
     background-color: map-get($paleta, $key:'seis');
 }
 
+#mainNosotros{
+    background-color: #279EB0;
+    color: #D2E1FC;
+}
 .grid{
     display: grid;
     width: 99%;   
