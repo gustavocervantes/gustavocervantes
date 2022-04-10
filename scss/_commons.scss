@@ -321,20 +321,17 @@ $paleta:(
 
 
 #navIndex{
-    background-color: map-get($paleta, $key:'seis');
+    background-color: map-get($paleta, $key:'cinco');
 }
 
 #navNosotros{
-    background-color: map-get($paleta, $key:'seis');
+    background-color: map-get($paleta, $key:'cinco');
 }
 
 #bg-mapNav{
-    background-color: map-get($paleta, $key:'seis');
+    background-color: map-get($paleta, $key:'cinco');
 }
 
-#botonera{
-    background-color: map-get($paleta, $key:'seis');
-}
 
 #mainNosotros{
     background-color: #279EB0;
@@ -626,14 +623,14 @@ width: 100%;
 @media (max-width: 280px) {
     .grid{
         grid-template-columns: repeat(1, 1fr);
-        grid-template-areas: "header"
-                        "nav" 
-                        "main"
-                        "aside" 
-                        "nps"
-                        "carrusel"
-                        "footer";
-    }
+        grid-template-areas: "header" 
+        "nav" 
+        "main"
+        "aside"
+        "nps" 
+        "carrusel"
+        "footer";}
+        
 #headerA{
     grid-area: header;
         }
@@ -689,3 +686,4 @@ width: 100%;
     grid-area: footer;
              }
 }
+
